@@ -31,7 +31,7 @@ public class UpgradeManager : MonoBehaviour
     private void Update()
     {
         score = gameManager.Score;
-        if (score % 300 == 0 && !UpgradesApplied && score != 0)
+        if (score % 1000 == 0 && !UpgradesApplied && score != 0)
         {
             ApplyUpgrades();
         }
