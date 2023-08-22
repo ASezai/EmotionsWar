@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject DieEffect;
     private void Start()
     {
-        health = 100f;
+        health = EnemyStats.Healt;
     }
 
     void Update()

@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         Score = 0;
         UpdateScore(Score);
     }
-    public Transform PlayerLoc
+    public Transform PlayerLocation
     {
         get { return playerLocation; }
     }
@@ -80,6 +80,14 @@ public class GameManager : MonoBehaviour
     {
         instance.Score += s;
         instance.ScoreText.text = instance.Score.ToString("000,000");
+        if (instance.Score % 3000 == 0)
+        {
+            EnemyStats.Healt += 100;
+        }
+        if (instance.Score % 4000 == 0 && EnemyStats.MoveSpeed < 17)
+        {
+            EnemyStats.MoveSpeed += 1f;
+        }
     }
     public void PauseGame()
     {
