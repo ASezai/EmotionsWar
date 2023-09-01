@@ -1,32 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    private float health;
-    private int score = 100;
+    private float currentHealth;
+    private int score;
+
+    public Slider slider;
+
     public GameObject DieEffect;
+
     private void Start()
     {
-        health = EnemyStats.Healt;
+        currentHealth = EnemyStats.Healt;
+        score = EnemyStats.ScoreValue;
+        SetMaxHealth(EnemyStats.Healt);
     }
 
     void Update()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Died();
         }
     }
+    public void SetMaxHealth(float health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+    public void SetHealth(float health)
+    {
+        slider.value = health;
+    }
     public void TakeDamage(float Damage)
     {
-        health -= Damage;
+        currentHealth -= Damage;
+        SetHealth(currentHealth);
     }
     public void Died()
     {
         Destroy(gameObject);
         GameManager.UpdateScore(score);
+        EnemyStats.UpdateScore(score);
         GameObject BUM = Instantiate(DieEffect, transform.position, transform.rotation);
         Destroy(BUM, 1f);
     }

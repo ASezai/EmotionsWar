@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    private float MoveSpeed;
+    private float moveSpeed;
     private GameManager gameManager;
 
     private void Start()
     {
         gameManager = GameManager.instance;
-        MoveSpeed = EnemyStats.MoveSpeed;
+        moveSpeed = EnemyStats.MoveSpeed;
     }
     private void Update()
     {
         Vector3 moveDirection = (gameManager.PlayerLocation.position - transform.position).normalized;
-        transform.Translate(moveDirection * MoveSpeed * Time.deltaTime);
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
     }
 }

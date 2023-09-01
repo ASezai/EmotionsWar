@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private Transform playerLocation;
 
     public int Score;
+
     private void Awake()
     {
         if (instance == null)
@@ -80,17 +81,11 @@ public class GameManager : MonoBehaviour
     {
         instance.Score += s;
         instance.ScoreText.text = instance.Score.ToString("000,000");
-        if (instance.Score % 3000 == 0)
-        {
-            EnemyStats.Healt += 100;
-        }
-        if (instance.Score % 4000 == 0 && EnemyStats.MoveSpeed < 17)
-        {
-            EnemyStats.MoveSpeed += 1f;
-        }
     }
     public void PauseGame()
     {
+
+        Debug.Log(EnemyStats.Healt);
         Time.timeScale = 0f;
         PauseText.gameObject.SetActive(true);
         PauseButton.gameObject.SetActive(false);
@@ -102,6 +97,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResumeGame()
     {
+        Debug.Log(EnemyStats.Healt);
         Time.timeScale = 1f;
         PauseText.gameObject.SetActive(false);
         ResumeButton.gameObject.SetActive(false);
