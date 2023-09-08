@@ -5,14 +5,12 @@ using UnityEngine.UI;
 public class A : MonoBehaviour
 {
     [SerializeField] private float Health;
-    [SerializeField] private float MoveSpeed;
+    [SerializeField] protected float MoveSpeed;
     [SerializeField] private int ScoreValue;
     [SerializeField] private Slider slider;
 
     private float currentHealth;
     private GameManager gameManager;
-
-    // Start is called before the first frame update
 
     private void Start()
     {
@@ -28,14 +26,17 @@ public class A : MonoBehaviour
             Died();
         }
     }
-
     public void Died()
     {
         Destroy(gameObject);
         GameManager.UpdateScore(ScoreValue);
         EnemyStats.UpdateScore(ScoreValue);
     }
-    
+    protected virtual void Move() // virtual
+    {
+        Vector3 moveDirection = (gameManager.PlayerLocation.position - transform.position).normalized;
+        transform.Translate(moveDirection * MoveSpeed * Time.deltaTime);
+    }
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
@@ -49,11 +50,5 @@ public class A : MonoBehaviour
     {
         currentHealth -= Damage;
         SetHealth(currentHealth);
-    }
-
-    protected void Move()
-    {
-        Vector3 moveDirection = (gameManager.PlayerLocation.position - transform.position).normalized;
-        transform.Translate(moveDirection * MoveSpeed * Time.deltaTime);
     }
 }

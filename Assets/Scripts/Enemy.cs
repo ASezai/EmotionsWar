@@ -26,6 +26,14 @@ public class Enemy : MonoBehaviour
             Died();
         }
     }
+    public void Died()
+    {
+        Destroy(gameObject);
+        GameManager.UpdateScore(score);
+        EnemyStats.UpdateScore(score);
+        GameObject BUM = Instantiate(DieEffect, transform.position, transform.rotation);
+        Destroy(BUM, 1f);
+    }
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
@@ -39,13 +47,5 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= Damage;
         SetHealth(currentHealth);
-    }
-    public void Died()
-    {
-        Destroy(gameObject);
-        GameManager.UpdateScore(score);
-        EnemyStats.UpdateScore(score);
-        GameObject BUM = Instantiate(DieEffect, transform.position, transform.rotation);
-        Destroy(BUM, 1f);
     }
 }
