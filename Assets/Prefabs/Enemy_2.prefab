@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 2104027901024813645}
   - component: {fileID: 2104027901024813646}
   - component: {fileID: 2104027901024813647}
-  - component: {fileID: 399288021848089936}
+  - component: {fileID: 3419687760042045646}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Enemy
@@ -392,12 +392,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104027901024813648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a922c4be94cf8c4bb34c03f9246eacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &399288021848089936
+--- !u!114 &3419687760042045646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,5 +412,4 @@ MonoBehaviour:
   Health: 100
   MoveSpeed: 3
   ScoreValue: 100
-  sslider: {fileID: 2104027899054728641}
-  DieEffect: {fileID: 5177952598257469643, guid: d7dd6a1753e82d04b86611fc9ffeced1, type: 3}
+  slider: {fileID: 2104027899054728641}
