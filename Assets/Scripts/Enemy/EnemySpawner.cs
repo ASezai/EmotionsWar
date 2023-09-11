@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
+    public GameObject[] EnemyPrefabs;
     public Transform PlayerTransform;
     public float SpawnInterval = 1f;
-    public int MaxEnemyCount = 10000;
     public float MaxDistance = 17f; // Oyuncuya maksimum uzaklýk
-
-    private int currentEnemyCount = 0;
 
     private void Start()
     {
@@ -20,17 +17,20 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if (currentEnemyCount >= MaxEnemyCount)
-            return;
-
         Vector3 randomPosition = GetRandomPosition();
 
         if (Vector3.Distance(randomPosition, PlayerTransform.position) <= MaxDistance)
             return;
 
-        Instantiate(EnemyPrefab, randomPosition, Quaternion.identity);
-
-        currentEnemyCount++;
+        int randomNumber = Random.Range(1, 101);
+        if (randomNumber <= 20)
+        {
+            Instantiate(EnemyPrefabs[1], randomPosition, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(EnemyPrefabs[0], randomPosition, Quaternion.identity);
+        }
     }
 
     private Vector3 GetRandomPosition()

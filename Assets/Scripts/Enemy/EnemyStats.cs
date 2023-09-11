@@ -13,18 +13,14 @@ public class EnemyStats : MonoBehaviour
     {
         Score += s;
         Debug.Log("Stats:"+Score);
-        if (Score % 3000 == 0)
+        if (Score % 300 == 0)
         {
             Healt += 100f;
+            Debug.Log(Healt);
         }
         if (Score % 4000 == 0 && MoveSpeed < 17)
         {
             MoveSpeed += 1f;
         }
-    }
-
-    public static void nemy()// farklý düþanlar farklý atamalar
-    {
-        Healt = 200; 
     }
 }

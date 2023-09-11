@@ -1,9 +1,11 @@
+// Enemy Script Copy
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class EnemyCopy : MonoBehaviour
 {
     private float currentHealth;
     private int score;
@@ -49,3 +51,4 @@ public class Enemy : MonoBehaviour
         SetHealth(currentHealth);
     }
 }
+*/

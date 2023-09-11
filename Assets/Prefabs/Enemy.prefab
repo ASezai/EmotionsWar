@@ -277,8 +277,7 @@ GameObject:
   - component: {fileID: 8985981664873678899}
   - component: {fileID: 8985981664873678898}
   - component: {fileID: 6685482350518706965}
-  - component: {fileID: 2494414665524836402}
-  - component: {fileID: 780362052532468888}
+  - component: {fileID: 1181306721287356511}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -370,7 +369,7 @@ CircleCollider2D:
   m_Offset: {x: 0.0052468777, y: 0.023399353}
   serializedVersion: 2
   m_Radius: 0.9142723
---- !u!114 &2494414665524836402
+--- !u!114 &1181306721287356511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,20 +378,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8985981664873678901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae87044c6217d54fb2a9afefdbca629, type: 3}
+  m_Script: {fileID: 11500000, guid: 85dbe5c5ba8524b49ba1657d085d0de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  MoveSpeed: 3
+  ScoreValue: 100
   slider: {fileID: 823277196114319312}
   DieEffect: {fileID: 5177952598257469643, guid: d7dd6a1753e82d04b86611fc9ffeced1, type: 3}
---- !u!114 &780362052532468888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985981664873678901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a922c4be94cf8c4bb34c03f9246eacf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

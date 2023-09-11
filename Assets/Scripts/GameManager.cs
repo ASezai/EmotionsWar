@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("gameover");
+        Debug.Log("GameOver");
         Time.timeScale = 0f;
         RestartButton.gameObject.SetActive(true);
         MainMenuButton.gameObject.SetActive(true);
@@ -84,8 +84,6 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
-
-        Debug.Log(EnemyStats.Healt);
         Time.timeScale = 0f;
         PauseText.gameObject.SetActive(true);
         PauseButton.gameObject.SetActive(false);
@@ -97,7 +95,6 @@ public class GameManager : MonoBehaviour
     }
     public void ResumeGame()
     {
-        Debug.Log(EnemyStats.Healt);
         Time.timeScale = 1f;
         PauseText.gameObject.SetActive(false);
         ResumeButton.gameObject.SetActive(false);

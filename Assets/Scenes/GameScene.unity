@@ -1741,10 +1741,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ef9b8bc2092ea48927164c8d358ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 2104027901024813648, guid: f52a602bd17bdf143890ed238ce56339, type: 3}
+  EnemyPrefabs:
+  - {fileID: 8985981664873678901, guid: 293115de7c6a40f4b8df09f21c95d73a, type: 3}
+  - {fileID: 2104027901024813648, guid: f52a602bd17bdf143890ed238ce56339, type: 3}
   PlayerTransform: {fileID: 792679443}
   SpawnInterval: 1
-  MaxEnemyCount: 10000
   MaxDistance: 17
 --- !u!4 &825609270
 Transform:

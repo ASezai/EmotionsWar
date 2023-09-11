@@ -277,8 +277,6 @@ GameObject:
   - component: {fileID: 2104027901024813643}
   - component: {fileID: 2104027901024813644}
   - component: {fileID: 2104027901024813645}
-  - component: {fileID: 2104027901024813646}
-  - component: {fileID: 2104027901024813647}
   - component: {fileID: 3419687760042045646}
   m_Layer: 0
   m_Name: Enemy_2
@@ -371,32 +369,6 @@ CircleCollider2D:
   m_Offset: {x: 0.010837972, y: 0}
   serializedVersion: 2
   m_Radius: 0.91402704
---- !u!114 &2104027901024813646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104027901024813648}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bae87044c6217d54fb2a9afefdbca629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 2104027899054728641}
-  DieEffect: {fileID: 5177952598257469643, guid: d7dd6a1753e82d04b86611fc9ffeced1, type: 3}
---- !u!114 &2104027901024813647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104027901024813648}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a922c4be94cf8c4bb34c03f9246eacf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3419687760042045646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee225afd8cbd7bb448c6d761bdc0f899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  MoveSpeed: 3
+  Health: 60
+  MoveSpeed: 5
   ScoreValue: 100
   slider: {fileID: 2104027899054728641}
+  DieEffect: {fileID: 5177952598257469643, guid: 16e155908449b4b46ac2e5f948f2773d, type: 3}

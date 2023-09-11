@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class A : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private float Health;
-    [SerializeField] protected float MoveSpeed;
+    [SerializeField] private float MoveSpeed;
     [SerializeField] private int ScoreValue;
     [SerializeField] private Slider slider;
+
+    //private static int score = 0;
 
     private float currentHealth;
     private GameManager gameManager;
 
-    private void Start()
+    public GameObject DieEffect;
+
+    protected virtual void Start()
     {
-        SetMaxHealth(Health);
         currentHealth = Health;
+        SetMaxHealth(currentHealth);
         gameManager = GameManager.instance;
     }
     private void Update()
@@ -30,7 +34,9 @@ public class A : MonoBehaviour
     {
         Destroy(gameObject);
         GameManager.UpdateScore(ScoreValue);
-        EnemyStats.UpdateScore(ScoreValue);
+        //EnemyStats.UpdateScore(ScoreValue);
+        GameObject BUM = Instantiate(DieEffect, transform.position, transform.rotation);
+        Destroy(BUM, 1f);
     }
     protected virtual void Move() // virtual
     {
@@ -51,4 +57,19 @@ public class A : MonoBehaviour
         currentHealth -= Damage;
         SetHealth(currentHealth);
     }
+    /*public void UpdateScore(int s)
+    {
+        score += s;
+        Debug.Log("Stats:" + score);
+        if(score % 300 == 0)
+        {
+            Health += 100f;
+            Debug.Log("hh:" + Health);
+        }
+        Debug.Log("out:" + Health);
+        if(score % 4000 == 0 && MoveSpeed < 17)
+        {
+            MoveSpeed += 1f;
+        }
+    }*/
 }
